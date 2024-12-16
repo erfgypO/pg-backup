@@ -42,10 +42,10 @@ if [ -z $B2_BUCKET ]; then
     exit 22
 fi
 
-if [ -z $(which b2) ]; then
-    echo "missing b2-tools"
-    exit 22
-fi
+#if [ -z $(which b2) ]; then
+#    echo "missing b2-tools"
+#    exit 22
+#fi
 
 DB_NAMES=`PGPASSWORD=$PG_PASSWORD psql -U $PG_USER -p $PG_PORT -d $PG_DB -c "select datname from pg_database where datistemplate = false and datname <> 'postgres';" -h $PG_HOST -t`
 
